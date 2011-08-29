@@ -1,16 +1,20 @@
-function start() {
-	console.log("Request handler 'start' was called.");
-	return "Start route";
+var exec = require("child_process").exec;
+
+function start(response) {
+	response.writeHead(200, {"Content-Type": "text/html"});
+	response.write("Start");
+	response.end();
+}
+function upload(response, postData) {
+	response.writeHead(200, {"Content-Type": "text/html"});
+	response.write("You've sent: " + postData);
+	response.end();
 }
 
-function upload() {
-	console.log("Request handler 'upload' was called.");
-	return "Upload route";
-}
-
-function error404() {
-	console.log("404");
-	return "404";
+function error404(response) {
+	response.writeHead(404, {"Content-Type": "text/html"});
+	response.write("404 not found");
+	response.end();
 }
 
 exports.start = start;

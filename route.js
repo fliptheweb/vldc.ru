@@ -1,10 +1,9 @@
-function route(handle, pathname) {
-	console.log("Request for " + pathname + "by route module");
+function route(handle, pathname, response, postData) {
+	console.log("Request - " + pathname);
 	if (typeof handle[pathname] === 'function') {
-		return handle[pathname]();
+		return handle[pathname](response, postData);
 	} else {
-		console.log("No request handler found for " + pathname);
-		return handle["/404"]();
+		return handle["/404"](response, postData);
 	}
 }
 
