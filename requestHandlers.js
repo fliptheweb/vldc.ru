@@ -1,14 +1,32 @@
-var exec = require("child_process").exec;
+var querystring = require("querystring"),
+	exec = require("child_process").exec,
+	formidable = require("formidable"),
+	fs = require("fs");
 
 function start(response) {
 	response.writeHead(200, {"Content-Type": "text/html"});
-	response.write("Start");
+	var body ='<form method="post" action="/upload"><input type="text" name="text" id=""><input type="submit" value=""></form>'
+	response.write(body);
 	response.end();
 }
 function upload(response, postData) {
 	response.writeHead(200, {"Content-Type": "text/html"});
-	response.write("You've sent: " + postData);
+	response.write("You've sent: " + querystring.parse(postData).text);
 	response.end();
+}
+
+function show(response, postdata) {
+	fs.readfile("/tmp/test.png", "binary", function(error, file) {
+		if(error) {
+			response.writehead(500, {"content-type": "text/plain"});
+			response.write(error + "\n");
+			response.end();
+		} else {
+			response.writehead(200, {"content-type": "image/png"});
+			response.write(file, "binary");
+			response.end();
+		}
+	});
 }
 
 function error404(response) {
@@ -19,4 +37,5 @@ function error404(response) {
 
 exports.start = start;
 exports.upload = upload;
+exports.error404 = show;
 exports.error404 = error404;
