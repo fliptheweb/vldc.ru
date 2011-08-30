@@ -9,13 +9,19 @@ function start(response) {
 	response.write(body);
 	response.end();
 }
-function upload(response, postData) {
-	response.writeHead(200, {"Content-Type": "text/html"});
-	response.write("You've sent: " + querystring.parse(postData).text);
-	response.end();
+function upload(response, request) {
+	var form = new formidable.IncomingForm();
+	form.parse(request, function(error, fields, files) {
+		fs.renameSync(files.upload.path, "/tmp/test.png");
+		response.writeHead(200, {"Content-Type": "text/html"});
+		response.write("received image:<br/>");
+		response.write("<img src='/show' />");
+		response.end();
+	});
+
 }
 
-function show(response, postdata) {
+function show(response, request) {
 	fs.readFile("/tmp/test.png", "binary", function(error, file) {
 		if(error) {
 			response.writeHead(500, {"content-type": "text/plain"});

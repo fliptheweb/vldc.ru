@@ -1,9 +1,9 @@
-function route(handle, pathname, response, postData) {
+function route(handle, pathname, response, request) {
 	console.log("Request - " + pathname);
 	if (typeof handle[pathname] === 'function') {
-		return handle[pathname](response, postData);
+		return handle[pathname](response, request);
 	} else {
-		return handle["/404"](response, postData);
+		return handle["/404"](response, request);
 	}
 }
 
