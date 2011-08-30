@@ -16,13 +16,13 @@ function upload(response, postData) {
 }
 
 function show(response, postdata) {
-	fs.readfile("/tmp/test.png", "binary", function(error, file) {
+	fs.readFile("/tmp/test.png", "binary", function(error, file) {
 		if(error) {
-			response.writehead(500, {"content-type": "text/plain"});
+			response.writeHead(500, {"content-type": "text/plain"});
 			response.write(error + "\n");
 			response.end();
 		} else {
-			response.writehead(200, {"content-type": "image/png"});
+			response.writeHead(200, {"content-type": "image/png"});
 			response.write(file, "binary");
 			response.end();
 		}
@@ -37,5 +37,5 @@ function error404(response) {
 
 exports.start = start;
 exports.upload = upload;
-exports.error404 = show;
+exports.show = show;
 exports.error404 = error404;
