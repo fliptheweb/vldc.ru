@@ -3,8 +3,9 @@
 
 /* TEAM */
   Twitter: http://twitter.com/fliptheweb
-  Twitter: http://twitter.com/yarushimi
   Twitter: http://twitter.com/antonlyapunov
+  Twitter: http://twitter.com/yarushimi
+
 
 /* SITE */
   Standards: HTML5, CSS3

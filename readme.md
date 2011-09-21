@@ -22,5 +22,6 @@
 Участие в разработке сайта поошряетя! Форкайте, делайте пулл реквесты, пишите в трекер предложения с тегом feature. Давайте вместе сделаем крутой сайт для нашей конференции ^^
 
 Если появились сложности с установкой, запуском, или вообще вопросы про ноду, спрашивайте кого-нибудь из нашей команды - с радостью поможем:
-* fliptheweb - http://twitter.ru/fliptheweb
-* Anton Lyapunov - http://twitter.ru/antonlyapunov
+
+* @fliptheweb - http://twitter.ru/fliptheweb
+* @AntonLyapunov - http://twitter.ru/antonlyapunov
