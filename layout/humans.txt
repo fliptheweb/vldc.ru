@@ -1,0 +1,11 @@
+/* the humans responsible & colophon */
+/* humanstxt.org */
+
+/* TEAM */
+  Twitter: http://twitter.com/fliptheweb
+  Twitter: http://twitter.com/yarushimi
+  Twitter: http://twitter.com/antonlyapunov
+
+/* SITE */
+  Standards: HTML5, CSS3
+  Components: jQuery
