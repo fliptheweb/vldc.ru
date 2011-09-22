@@ -23,5 +23,5 @@
 
 Если появились сложности с установкой, запуском, или вообще вопросы про ноду, спрашивайте кого-нибудь из нашей команды - с радостью поможем:
 
-* @fliptheweb - http://twitter.ru/fliptheweb
-* @AntonLyapunov - http://twitter.ru/antonlyapunov
+* @fliptheweb - http://twitter.com/fliptheweb
+* @AntonLyapunov - http://twitter.com/antonlyapunov
