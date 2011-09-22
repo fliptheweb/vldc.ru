@@ -1,7 +1,62 @@
 !!! 5
-html
-    head
-        title VLDC
-    body
-        h1 It's works
-    
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+    title VLDC
+    meta(name='description', content='')
+    meta(name='author', content='')
+    meta(name='viewport', content='width=device-width,initial-scale=1')
+    link(rel='stylesheet', href='css/style.css')
+    link(rel='stylesheet', href='js/libs/colorbox.css')
+  body
+    // Вся верстка и js только для православных браузеров ;) 
+    .l-wrap
+      .l-page
+        h1 Vladivostok developer conference #0
+        p
+          strong
+            | Самое главное: 16 сентября, 20:00
+            a(href='http://maps.yandex.ru/?um=pR5I2SBhHBckp4aI3fUVjWpD8ufnwxBv&l=map%2Ccmr') ул. Светланская 55
+            | , 501 кабинет
+        p
+          | Это будет первая серьёзная попытка провести конференцию разработчиков во
+          | Владивостоке. До этого была первая несерьезная, в кафе, но было здорово!
+        p
+          | Принять участие в конференции может кто угодно, нужно лишь заполнить небольшую
+          | форму, ссылка на которую располагается чуть ниже.
+        p
+          | Участие в конференции совершенно бесплатное, но мы были бы очень рады, если
+          | каждый подготовит небольшой доклад на 5-10 минуток и поделится своим опытом,
+          | инструментами, взглядами на жизнь и на технологии. Никаких рамок для докладов
+          | нет! По мере поступления заявок мы будем формировать расписание.
+        p
+          | Что вас ожидает на VLDC? Прежде всего обмен опытом и знаниями, проектор для
+          | презентации вашего доклада, кофе-брейк с бутербродами и свежесваренным кофе! А
+          | после, можно пойти в бар и продолжить общение за кружечкой пива :)
+        p Приходите, готовьте доклады, будет весело!
+        .feedback
+          button Принять участие
+          | &larr; Вылетит птичка
+        .hidden
+          .feedback-form
+            form(method='post')
+              h2 Регистрация на VLDC #0
+              label(for='name') ФИО или ник:
+              input#name(type='text', name='name', required='required')
+              label(for='email') Email:
+              input#email(type='email', name='email')
+              label(for='doc') Тема доклада, по желанию:
+              input#doc(type='text', name='doc')
+              input(type='submit', value='Ну теперь уж точно принять участие')
+    footer
+      .l-footer
+        h2 План такой:
+        dl
+          dt 20:00 &mdash; 20:20
+          dd Собираемся, знакомимся, усаживаемся поудобнее
+          dt 20:00 &mdash; 20:30
+          dd Собираемся знакомимся, ждем опоздавших, улыбаемся и машем
+    script(src='//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js')
+    script(src='js/libs/jquery.colorbox-min.js')
+    script(src='js/script.js')
