@@ -8,18 +8,22 @@
 Вроде вменяемое руководство для новичков - http://joyeur.com/2010/12/10/installing-node-and-npm/
 Учтите, что express работает пока только на node >= 0.4.1 < 0.5.0. Я, например, по этому случаю, поставил себе ветку 0.4.11, описание установки полностью можно взять вот тут https://github.com/joyent/node/wiki/Installation
 
-Затем, качаем npm'ом express framework `npm install express` (http://expressjs.com/)
+Затем, качаем npm'ом express framework `npm install express` (http://expressjs.com/).
 Документация на русском - http://express-js.ru/
+
+После этого устанавливаем jade template engine `npm install jade` (http://jade-lang.com/).
+Документация на русском - http://express-js.ru/jade/guide.html
 
 Все установили? Запускаем `node app.js`, смотрим в браузер http://localhost:3000. Уииииии!
 
 # Standarts and components
 * node.js - https://github.com/joyent/node
 * express - https://github.com/visionmedia/express
+* jade    - https://github.com/visionmedia/jade
 * html5-boilerplate (for basic layout) - https://github.com/fliptheweb/html5-boilerplate
 
 # Contribution
-Участие в разработке сайта поощряетя! Форкайте, делайте пулл реквесты, пишите в трекер предложения с тегом feature. Давайте вместе сделаем крутой сайт для нашей конференции ^^
+Участие в разработке сайта поощряетя! Форкайте, делайте пулл реквесты, пишите в трекер предложения. Давайте вместе сделаем крутой сайт для нашей конференции ^^
 
 Если появились сложности с установкой, запуском, или вообще вопросы про ноду, спрашивайте кого-нибудь из нашей команды - с радостью поможем:
 
