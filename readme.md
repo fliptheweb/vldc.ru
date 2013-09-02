@@ -35,7 +35,7 @@
 
 - [Официальный сайт ExpressJs](http://expressjs.com/) ([https://github.com/visionmedia/express](github))
 - [Документация по ExpressJs на русском](http://express-js.ru/)
-- [Шаблонизатор Jade](http://jade-lang.com/) (используется для рендеринга страниц, [https://github.com/visionmedia/jade](github))
+- [Шаблонизатор Jade](http://jade-lang.com/) (используется для рендеринга страниц, [github](https://github.com/visionmedia/jade))
 - [html5-boilerplate (for basic layout)](html5-boilerplate)
 - [nodejs](https://github.com/joyent/node)
 
