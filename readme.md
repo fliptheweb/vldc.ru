@@ -7,7 +7,7 @@
 
 
 Для начала нужно установить node.js > 0.10 и npm (менеджер модулей для ноды, - чаще всего идет вместе с нодой, поэтому дополнительно устанавливать его не нужно).
-Рекомендуем использовать [https://github.com/creationix/nvm](nvm) (node versions manager).
+Рекомендуем использовать [nvm](https://github.com/creationix/nvm) (node versions manager).
 
 Проверить, установлена ли нода и npm можно проверив версию. Вы получите что-то вроде:
 
@@ -33,11 +33,11 @@
 
 ## Links
 
-- [http://expressjs.com/](Официальный сайт ExpressJs) ([github](https://github.com/visionmedia/express))
-- [http://express-js.ru/](Документация по ExpressJs на русском)
-- [http://jade-lang.com/](Шаблонизатор Jade) (используется для рендеринга страниц, [github](https://github.com/visionmedia/jade))
-- [https://github.com/fliptheweb/html5-boilerplate](html5-boilerplate (for basic layout))
-- [https://github.com/joyent/node](nodejs)
+- [Официальный сайт ExpressJs](http://expressjs.com/) ([https://github.com/visionmedia/express](github))
+- [Документация по ExpressJs на русском](http://express-js.ru/)
+- [Шаблонизатор Jade](http://jade-lang.com/) (используется для рендеринга страниц, [https://github.com/visionmedia/jade](github))
+- [html5-boilerplate (for basic layout)](html5-boilerplate)
+- [nodejs](https://github.com/joyent/node)
 
 
 ## Contribution
