@@ -33,8 +33,6 @@ app.get('/', function(req, res){
     res.render('index');
 });
 
-console.log(app.on);
-
 app.listen(PORT, function() {
     console.log("Running on http://127.0.0.1:" + PORT + '/');
 });
