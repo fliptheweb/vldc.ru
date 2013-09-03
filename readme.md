@@ -3,26 +3,44 @@
 
 Думаю документацию стоит писать на русском, хотя сам не поддерживаю этот подход в своих разработках :)
 
-# Installation guide
-Для начала нужно установить node.js и npm (менеджер модулей для ноды).
-Вроде вменяемое руководство для новичков - http://joyeur.com/2010/12/10/installing-node-and-npm/
-Учтите, что express работает пока только на node >= 0.4.1 < 0.5.0. Я, например, по этому случаю, поставил себе ветку 0.4.11, описание установки полностью можно взять вот тут https://github.com/joyent/node/wiki/Installation
+## Installation guide
 
-Затем, качаем npm'ом express framework `npm install express` (http://expressjs.com/).
-Документация на русском - http://express-js.ru/
 
-После этого устанавливаем jade template engine `npm install jade` (http://jade-lang.com/).
-Документация на русском - http://express-js.ru/jade/guide.html
+Для начала нужно установить node.js > 0.10 и npm (менеджер модулей для ноды, - чаще всего идет вместе с нодой, поэтому дополнительно устанавливать его не нужно).
+Рекомендуем использовать [nvm](https://github.com/creationix/nvm) (node versions manager).
 
-Все установили? Запускаем `node app.js`, смотрим в браузер http://localhost:3000. Уииииии!
+Проверить, установлена ли нода и npm можно проверив версию. Вы получите что-то вроде:
 
-# Standarts and components
-* node.js - https://github.com/joyent/node
-* express - https://github.com/visionmedia/express
-* jade    - https://github.com/visionmedia/jade
-* html5-boilerplate (for basic layout) - https://github.com/fliptheweb/html5-boilerplate
+    $ node --version
+    v0.10.8
+    $ npm --version
+    1.2.23
 
-# Contribution
+Далее, клонируем этот репозиторий на github'е и переходим в созданную директорию:
+
+    git clone git@github.com:fliptheweb/vldc.ru.git
+    cd vldc.ru
+
+Ставим все необходимые пакеты через `npm`:
+
+`npm install`
+
+Если всё хорошо, можно запускать приложение: 
+
+`node app [PORT]`
+
+По умолчанию PORT=3000
+
+## Links
+
+- [Официальный сайт ExpressJs](http://expressjs.com/) ([https://github.com/visionmedia/express](github))
+- [Документация по ExpressJs на русском](http://express-js.ru/)
+- [Шаблонизатор Jade](http://jade-lang.com/) (используется для рендеринга страниц, [github](https://github.com/visionmedia/jade))
+- [html5-boilerplate (for basic layout)](html5-boilerplate)
+- [nodejs](https://github.com/joyent/node)
+
+
+## Contribution
 Участие в разработке сайта поощряетя! Форкайте, делайте пулл реквесты, пишите в трекер предложения. Давайте вместе сделаем крутой сайт для нашей конференции ^^
 
 Если появились сложности с установкой, запуском, или вообще вопросы про ноду, спрашивайте кого-нибудь из нашей команды - с радостью поможем:

@@ -1,4 +1,7 @@
-var app = require('express').createServer();
+var express = require("express"),
+    app = express(),
+    DEFAULT_PORT = 3000,
+    PORT = process.argv[2] || DEFAULT_PORT;
 
 //configurate our server
 app.configure(function(){
@@ -8,7 +11,7 @@ app.configure(function(){
 
 app.use(app.router);
 //if no one routes don't match
-app.use(function(req, res){
+app.use(function(err, req, res, next) {
     //TODO create jade template for 404 page
     res.send('Извините, страница не найдена', 404);
 });
@@ -27,7 +30,9 @@ app.get("/layout/*", function(req, res, next){
 
 //all path routed to root
 app.get('/', function(req, res){
-	res.render('index');
+    res.render('index');
 });
 
-app.listen(3000);
+app.listen(PORT, function() {
+    console.log("Running on http://127.0.0.1:" + PORT + '/');
+});
