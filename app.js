@@ -1,7 +1,7 @@
 var express = require("express"),
     app = express(),
     DEFAULT_PORT = 3000,
-    PORT = process.argv[2] || DEFAULT_PORT;
+    PORT = process.env.PORT || process.argv[2] || DEFAULT_PORT;
 
 //configurate our server
 app.configure(function(){
