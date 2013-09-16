@@ -5,7 +5,8 @@
   "dependencies": {
     "express": "3.x",
     "jade": "0.31.x",
-    "nconf": "0.6.7"
+    "nconf": "0.6.7",
+    "pg": "0.6.15"
   },
   "engines": {
     "node": "0.10.x",
