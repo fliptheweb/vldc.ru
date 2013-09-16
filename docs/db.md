@@ -20,25 +20,25 @@ GRANT ALL PRIVILEGES ON DATABASE vldc to vldc
 
 Создали юзера. Выходим из под postgres юзера и проверяем:
 
-`
+```
 PGPASSWORD=LgX0965VS4R857H psql -d vldc -U vldc -h localhost
-`
+```
 
 Должно получится что-то вроде:
 
-`
+```
 psql (9.1.9)
 SSL connection (cipher: DHE-RSA-AES256-SHA, bits: 256)
 Type "help" for help.
 
 vldc=>
-`
+```
 
 Дальше создаем таблицы или просто выполняем скриптец
 
-`
+```
 PGPASSWORD=LgX0965VS4R857H psql -d vldc -U vldc -h localhost  < docs/schema.db
-`
+````
 
 Поздравляю. Можем залогиниться и еще раз проверить, что все таблицы есть на месте
 
