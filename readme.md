@@ -27,7 +27,7 @@
 
 Настраиваем БД
 
-	читаем (тут)[docs/db.md]
+читаем [тут](docs/db.md)
 
 
 Если всё хорошо, можно запускать приложение: 
@@ -43,6 +43,7 @@
 - [Шаблонизатор Jade](http://jade-lang.com/) (используется для рендеринга страниц, [github](https://github.com/visionmedia/jade))
 - [html5-boilerplate (for basic layout)](html5-boilerplate)
 - [nodejs](https://github.com/joyent/node)
+- [Соглашения по коду](http://nodeguide.com/style.html)
 
 
 ## Contribution
