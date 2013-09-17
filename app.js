@@ -18,12 +18,6 @@ app.get('/', function(req, res){
   res.render('index');
 });
 
-//if no one routes don't match
-app.all('*', function(req, res) {
-  //TODO create jade template for 404 page
-  res.send('Извините, страница не найдена', 404);
-});
-
 //all path routed to root
 app.get('/', function(req, res){
   res.render('index');
