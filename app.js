@@ -24,7 +24,10 @@ app.all('*', function(req, res) {
   res.send('Извините, страница не найдена', 404);
 });
 
-
+//all path routed to root
+app.get('/', function(req, res){
+  res.render('index');
+});
 
 app.listen(PORT, function() {
   console.log('Running on http://127.0.0.1:' + PORT + '/');
