@@ -3,14 +3,17 @@ var express = require("express"),
   DEFAULT_PORT = 3000,
   PORT = process.env.PORT || process.argv[2] || DEFAULT_PORT;
 
-//configurate our server
-app.configure(function(){
-  app.set('view engine', 'jade');             //we used jade templates
-
-  app.set('view options', {layout: false});   //dont use layout in `render` method
-});
-
 app.use(app.router);
+app.set('view engine', 'jade');
+app.set('view options', {layout: false});   //dont use layout in `render` method
+app.set('views', __dirname + '/views');
+app.use(express.logger('dev'));
+app.use(express.cookieParser());
+app.use(express.bodyParser());
+app.use(express.methodOverride());
+app.use(express.static(__dirname + '/public'));
+
+
 //if no one routes don't match
 app.use(function(err, req, res, next) {
   //TODO create jade template for 404 page

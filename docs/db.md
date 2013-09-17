@@ -44,5 +44,6 @@ PGPASSWORD=LgX0965VS4R857H psql -d vldc -U vldc -h localhost  < docs/schema.db
 
 `
 PGPASSWORD=LgX0965VS4R857H psql -d vldc -U vldc -h localhost
+
 \d
 `
