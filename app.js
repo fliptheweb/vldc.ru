@@ -20,18 +20,6 @@ app.use(function(err, req, res, next) {
   res.send('Извините, страница не найдена', 404);
 });
 
-//Routes
-
-//output static files
-app.get("/layout/*", function(req, res, next){
-  res.sendfile('layout/'+req.params, function(err){
-    //go to next suitable route if error
-    if(err){
-      next();
-    }
-  });
-});
-
 //all path routed to root
 app.get('/', function(req, res){
   res.render('index');
