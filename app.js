@@ -1,4 +1,6 @@
-var express = require('express'),
+var
+  db = require('./db'),
+  express = require('express'),
   app = express(),
   DEFAULT_PORT = 3000,
   PORT = process.env.PORT || process.argv[2] || DEFAULT_PORT;
@@ -23,6 +25,8 @@ app.get('/', function(req, res){
   res.render('index');
 });
 
-app.listen(PORT, function() {
-  console.log('Running on http://127.0.0.1:' + PORT + '/');
+db.connectDatabase(function() {
+  app.listen(PORT, function() {
+    console.log('Running on http://127.0.0.1:' + PORT + '/');
+  });
 });
