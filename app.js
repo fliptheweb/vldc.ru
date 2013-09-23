@@ -21,9 +21,7 @@ app.get('/', function(req, res){
 });
 
 //all path routed to root
-app.get('/', function(req, res){
-  res.render('index');
-});
+app.get('/', express.static(__dirname));
 
 db.connectDatabase(function() {
   app.listen(PORT, function() {
