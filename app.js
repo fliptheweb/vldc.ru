@@ -18,6 +18,10 @@ app.use(express.static(__dirname + '/public'));
 //all path routed to root
 app.get('/', express.static(__dirname));
 
+app.get('/layout', function(req, res) {
+  res.render('layout');
+});
+
 app.post('/member/new', function(req, res) {
   console.log(req.headers);
   console.log(req.body);
