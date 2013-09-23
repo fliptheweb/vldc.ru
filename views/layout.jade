@@ -4,13 +4,19 @@ html(lang='ru')
 
         meta(charset='utf-8')
         meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
-        title {{title}}
+        title #{title}
         meta(name='description', content='')
         link(href='http://fonts.googleapis.com/css?family=Roboto:300,400&subset=latin,cyrillic',rel='stylesheet',type='text/css')
         link(rel='stylesheet', href='/css/style.css')
         //if lte IE 8
             link(rel="stylesheet", href="css/ie8.css")
     body
+        if flash
+            if error
+                flashClass = "flash red"
+            else
+                flashClass = "flash green"
+            div(class=flashClass) #{flash}
         div(class="body")
             block content
             include footer

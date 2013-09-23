@@ -16,10 +16,10 @@ app.use(express.methodOverride());
 app.use(express.static(__dirname + '/public'));
 
 //all path routed to root
-app.get('/', express.static(__dirname));
-
-app.get('/layout', function(req, res) {
-  res.render('index');
+app.get('/', function(req, res) {
+  res.render('index', {
+    title: 'Главная'
+  });
 });
 
 app.post('/member/new', function(req, res) {
@@ -33,7 +33,11 @@ app.post('/member/new', function(req, res) {
     workplace = request.workplace || null;
 
   if (!surname || !name || !email || !workplace) {
-    app.get('/', express.static(__dirname));
+    res.render('index', {
+      title: "Главная",
+      flash: "Ты говно, ты не заполнил все поля",
+      error: true
+    });
   }
   //todo validate email
 
@@ -48,7 +52,12 @@ app.post('/member/new', function(req, res) {
     }
     var isExist = result.rows[0].cnt > 0;
     if (isExist) {
-      res.redirect('/');
+      res.render('index',
+        {
+          title: "Главная",
+          flash: "Ты говно, ты уже зареган",
+          error: true
+        });
     } else {
       query = 'insert into event_member (event_id, name, date, email, workplace)' +
         'values (1, \''+name+'\', now(), \''+email+'\', \''+workplace+'\')';
@@ -57,7 +66,12 @@ app.post('/member/new', function(req, res) {
           res.json(err)
         } else {
           //todo send email
-          res.redirect('/');
+          res.render('index',
+            {
+              title: "Главная",
+              flash: "Все ок, иди в жопу",
+              error: false
+            });
         }
       });
     }
