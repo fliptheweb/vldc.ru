@@ -1,3 +1,31 @@
 select 'Hello world!';
 
+
+CREATE TABLE public.event
+(
+    id bigserial PRIMARY KEY NOT NULL,
+    name varchar  NOT NULL,
+    date timestamp  NOT NULL,
+    location varchar  NOT NULL
+);
+ALTER TABLE public.event
+ ADD CONSTRAINT unique_id UNIQUE (id);
+
+CREATE TABLE public.event_member
+(
+  id bigserial PRIMARY KEY NOT NULL,
+  event_id bigint not null,
+  name varchar  NOT NULL,
+  date timestamp  NOT NULL,
+  location varchar  NOT NULL
+);
+ALTER TABLE public.event_member
+ADD CONSTRAINT em_unique_id UNIQUE (id);
+
+alter table public.event_member add constraint
+event_member_ref foreign key (event_id) references event(id);
+
+insert into event(name, date, location)
+    values ('VLDC#666', now(), 'Universe');
+
 select 'done!';
