@@ -19,7 +19,7 @@ app.use(express.static(__dirname + '/public'));
 app.get('/', express.static(__dirname));
 
 app.get('/layout', function(req, res) {
-  res.render('layout');
+  res.render('index');
 });
 
 app.post('/member/new', function(req, res) {

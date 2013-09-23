@@ -1,0 +1,31 @@
+div(class="header clear-edges")
+    div(class="wrap")
+        div(class="row")
+            div(class="col-xs-12 col-sm-6 col-sm-offset-3 pr")
+                a(class="header__close js-header-close hidden-xs", href="#")
+                h1(class="header__title") Регистрация участника
+            div(class="col-sm-3")
+            div(class="col-xs-12 col-sm-4 col-sm-offset-4")
+                p(class="header__desc") Заполните форму ниже, а&nbsp;мы&nbsp;напечатаем бейджик
+                    | для&nbsp;вас и&nbsp;будем знать что вы&nbsp;придете
+                div(class="reg-form")
+                    div(class="reg-form__inner")
+                        div(class="reg-form__thread")
+                            i
+                        form(action="/member/new", method="POST", class="form-horizontal")
+                            div(class="form-group")
+                                div(class="reg-form__2cols")
+                                    label(for="surname") Фамилия
+                                    input(class="form-control", type="text", name="surname", id="surname")
+                                div(class="reg-form__2cols")
+                                    label(for="name") Имя
+                                    input(class="form-control", type="text", name="name", id="name")
+                            div(class="form-group")
+                                label(for="email") Электронная почта
+                                input(class="form-control reg-form__email", type="text", name="email", id="email")
+                            div(class="form-group")
+                                label(for="workplace") Место работы
+                                input(class="form-control reg-form__job", type="text", name="workplace", id="workplace")
+                            div(class="form-group")
+                                button(class="btn btn-lg reg-form__submit") Отправить
+            div(class="col-sm-4")
