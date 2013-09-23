@@ -15,6 +15,8 @@ app.use(app.router);
 app.use(express.methodOverride());
 app.use(express.static(__dirname + '/public'));
 
+//todo actions into separate route file
+
 //all path routed to root
 app.get('/', function(req, res) {
   res.render('index', {
