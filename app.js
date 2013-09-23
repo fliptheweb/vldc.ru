@@ -21,9 +21,7 @@ app.use(function(err, req, res, next) {
 });
 
 //all path routed to root
-app.get('/', function(req, res){
-  res.render('index');
-});
+app.get('/', express.static(__dirname));
 
 app.listen(PORT, function() {
   console.log("Running on http://127.0.0.1:" + PORT + '/');
