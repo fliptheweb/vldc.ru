@@ -1,0 +1,448 @@
+/* framework */
+
+.bg(@image) {
+	background-image: url("../images/@{image}");
+}
+
+.size(@w, @h) {
+	width: @w;
+	height: @h;
+}
+
+.image-link(@image, @w, @h) {
+	display: block;
+	text-indent: -9999px;
+	.bg(@image);
+	.size(@w, @h);
+	border-bottom: none;
+
+	&:focus {
+		outline: none;
+	}
+}
+
+.pr {
+	position: relative;
+}
+
+.pa(@l: inherit, @t: inherit) {
+	left: @l;
+	top: @t;
+	position: absolute;
+}
+
+.p(@args: 0) {
+	padding: @args;
+}
+
+.m(@args: 0) {
+	margin: @args;
+}
+
+.fake-link {
+	border-bottom: 1px dashed;
+	white-space: nowrap;
+	text-decoration: none;
+	&:hover, &.active {
+		border-bottom-color: transparent;
+		text-decoration: none;
+	}
+}
+
+.clear-menu-first() {
+	li:first-child a {
+		margin-left: 0;
+		padding-left: 0;
+	}
+	@media (max-width: 768px) {
+		li a {
+			margin-left: 0;
+			padding-left: 0;
+		}
+	}
+}
+
+.ie7-inline-block() {
+	*display: inline;
+	*zoom: 1;
+}
+
+/*
+ * below from grid.less
+*/
+@baseFontSize: 15px;
+// font sizes 14px and 15px
+//@s-XXXL: @baseFontSize * 2.7857;/*39*/
+//@s-XXL: @baseFontSize * 2.5714;/*36*/
+//@s-XL: @baseFontSize * 1.9286;/*27*/
+//@s-L: @baseFontSize * 1.5;/*21*/
+//@s-M: @baseFontSize * 1.0714;/*15*/
+//@s-N: @baseFontSize;
+//@s-S: @baseFontSize * .857;/*12*/
+//@s-XS: @baseFontSize * .7857;/*11*/
+//@s-XXS: @baseFontSize * .7142;/*10*/
+//
+//@s-1: @baseFontSize * 2.0714;/*29*/
+//@s-2: @baseFontSize * 1.6428;/*23*/
+//@s-3: @baseFontSize * 1.2142;/*17*/
+
+// base = 15px
+@s-XXXL: @baseFontSize * 2.6;/*39*/
+@s-XXL: @baseFontSize * 1.8;/*27*/
+@s-XL: @baseFontSize * 1.6667;/*25*/
+@s-L: @baseFontSize * 1.2667;/*19*/
+@s-M: @baseFontSize * 1.1333;/*17*/
+@s-N: @baseFontSize;
+@s-S: @baseFontSize * .8;/*13*/
+@s-XS: @baseFontSize * .7333;/*11*/
+@s-XXS: @baseFontSize * .7142;/*10*/
+
+@s-1: @baseFontSize * 2.0714;/*29*/
+@s-2: @baseFontSize * 1.6428;/*23*/
+@s-3: @baseFontSize * 1.2142;/*17*/
+
+.f-XXXL {
+	font-size: @s-XXXL;
+	line-height: 1em
+}
+
+.f-XXL {
+	font-size: @s-XXL;
+	line-height: 1.12em
+}
+
+.f-XL {
+	font-size: @s-XL;
+	line-height: 1.15em
+}
+
+.f-L {
+	font-size: @s-L;
+	line-height: 1.15em
+}
+
+.f-N {
+	font-size: @s-N;
+}
+
+.f-M {
+	font-size: @s-M;
+	line-height: 1.25em
+}
+
+.f-S {
+	font-size: @s-S;
+	line-height: 1.4em
+}
+
+.f-XS {
+	font-size: @s-XS;
+	line-height: 1.4em
+}
+
+.f-XXS {
+	font-size: @s-XXS;
+	line-height: 1.3em
+}
+
+.f-normal {
+	font-size: @baseFontSize;
+	line-height: 1.4em;
+}
+
+// reset bootstrap
+h1, h2, h3, h4, p {
+	margin-top: 0;
+}
+
+p {
+	padding: 0 0 10px;
+	margin-bottom: 0;
+}
+
+// Headings sizing, without applying head tags. Common rules forces metrics to match ALWAYS
+/*h1, .f-1 {
+	font-size: @s-1
+}
+
+h2, .f-2 {
+	font-size: @s-2
+}
+
+h3, .f-3 {
+	font-size: @s-3
+}
+
+h4, .f-4 {.f-M()}
+
+// TODO explore https://github.com/nathansmith/960-Grid-System/blob/master/code/css/text.css
+h1, h2, .f-1, .f-2 {
+	padding-bottom: .3em;
+	line-height: 105%;
+	font-weight: normal;
+}
+
+h3, .f-3, h4, .f-4 {
+	font-weight: normal;
+}
+
+h2, .f-2 {
+	padding-top: 1em
+}
+
+h3, .f-3 {
+	padding-top: .7em;
+	padding-bottom: .7em;
+	line-height: 112%
+}*/
+
+// canvas width
+@width: 960px;
+@body-pad-side: 60px;
+
+// link usual
+@link-color: #0066CC;
+.link(@color: @link-color) {
+	color: @color;
+	text-decoration: none;
+	border-bottom: 1px solid desaturate(lighten(@color, 35%), 50%);
+
+	&:hover {
+		color: @color;
+		text-decoration: none;
+		border-bottom-color: desaturate(lighten(@color, 15%), 50%);
+	}
+}
+
+.simple-link(@color: @link-color) {
+	color: @color;
+	text-decoration: none;
+	border-bottom: 1px solid lighten(@color, 30%);
+
+	&:hover {
+		color: @color;
+		text-decoration: none;
+		border-bottom-color: @color;
+	}
+}
+
+// helper classes
+/* text transformations for individual cases */
+.f-i {
+	font-style: italic
+}
+
+.f-b {
+	font-weight: bold
+}
+
+.f-UC {
+	text-transform: uppercase
+}
+
+.f-lc {
+	text-transform: lowercase
+}
+
+.f-Cp {
+	text-transform: capitalize
+}
+
+.t-C {
+	text-align: center
+}
+
+.t-R {
+	text-align: right
+}
+
+.t-L {
+	text-align: left
+}
+
+.t-J {
+	text-align: justify;
+	word-spacing: -0.08em
+}
+
+.nobr {
+	white-space: nowrap
+}
+
+/* Navigation */
+.menu {
+	padding: 0;
+	margin: 0;
+
+	li {
+		list-style-type: none;
+		list-style-image: none;
+		line-height: 130%;
+
+		&.clear {
+			display: block !important;
+			float: none !important;
+			padding: 0;
+		}
+	}
+
+	a {
+		.link;
+	}
+}
+
+.menu-h {
+	.clearfix();
+	li {
+		display: inline-block;
+		.ie7-inline-block();
+		//float: left;
+		vertical-align: top;
+	}
+	a {
+		text-decoration: none;
+		display: inline-block;
+		.ie7-inline-block();
+//		padding: .2em .5em .25em;
+		margin: .2em .5em .25em;
+		vertical-align: top;
+		span {
+			vertical-align: top;
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	.menu-h {
+		li {
+			display: block;
+			margin: 0 !important;
+		}
+	}
+}
+
+// Grid wrappers
+.body {
+	padding: 0 @body-pad-side;
+	overflow: visible;
+//	min-width: @width - 2*@body-pad-side;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.clear-edges {
+	margin: 0 -@body-pad-side;
+	padding-left: @body-pad-side;
+	padding-right: @body-pad-side;
+}
+
+.clear-edges-no-pad {
+	margin: 0 -@body-pad-side;
+}
+
+// Content centering wrap
+.wrap {
+	max-width: 1200px;
+	//	min-width: 880px;
+	//	min-width: @width - 2*@body-pad-side; don't needed cuz .body has a fixed min width
+	margin: 0 auto;
+	text-align: left;
+	.clearfix();
+}
+
+// legacy for vertical shiftings
+/* Clearing paddings, for example, for particular paragraphs and heads */
+.pre-y-0 {
+	padding-top: 0
+}
+
+.post-y-0 {
+	padding-bottom: 0
+}
+
+.pre-y(@val) {
+	padding-top: @val
+}
+
+.post-y(@val) {
+	padding-bottom: @val
+}
+
+.em-suffix-eval(@val) when (@val > 0) {
+	(~'.pre-y-@{val}') {.pre-y(~'@{val}em')}
+	(~'.post-y-@{val}') {.post-y(~'@{val}em')}
+	.em-suffix-eval(@val - 1);
+}
+
+.em-suffix-eval(0) {
+}
+
+	.em-suffix-eval(4)
+
+;
+
+.pre-y-025 {
+	padding-top: .25em
+}
+
+.pre-y-05 {
+	padding-top: .5em
+}
+
+.pre-y-15 {
+	padding-top: 1.5em
+}
+
+.pre-y-25 {
+	padding-top: 2.5em
+}
+
+.pre-y-35 {
+	padding-top: 3.5em
+}
+
+.post-y-025 {
+	padding-bottom: .25em
+}
+
+.post-y-05 {
+	padding-bottom: .5em
+}
+
+.post-y-15 {
+	padding-bottom: 1.5em
+}
+
+.post-y-25 {
+	padding-bottom: 2.5em
+}
+
+.post-y-35 {
+	padding-bottom: 3.5em
+}
+
+// legacy 2.3.1 bootstrap
+// Border Radius
+.border-radius(@radius) {
+	-webkit-border-radius: @radius;
+	-moz-border-radius: @radius;
+	border-radius: @radius;
+}
+
+@media (max-width: 768px) {
+	@body-pad-side-small: 10px;
+	.body {
+		padding-left: @body-pad-side-small;
+		padding-right: @body-pad-side-small;
+		overflow: hidden;
+	}
+
+	.clear-edges {
+		margin: 0 -@body-pad-side-small;
+		padding-left: @body-pad-side-small;
+		padding-right: @body-pad-side-small;
+	}
+
+	.clear-edges-no-pad {
+		margin: 0 -@body-pad-side-small;
+	}
+}
