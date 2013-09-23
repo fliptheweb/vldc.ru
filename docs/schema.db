@@ -16,8 +16,10 @@ CREATE TABLE public.event_member
   id bigserial PRIMARY KEY NOT NULL,
   event_id bigint not null,
   name varchar  NOT NULL,
-  date timestamp  NOT NULL,
-  location varchar  NOT NULL
+  date timestamp  NOT NULL default now(),
+  email varchar  NOT NULL,
+  workplace varchar  NOT NULL
+
 );
 ALTER TABLE public.event_member
 ADD CONSTRAINT em_unique_id UNIQUE (id);
