@@ -3317,6 +3317,15 @@ body {
 .schedule-icon_break:focus {
   outline: none;
 }
+.schedule-icon_counter {
+  background-position: -237px 0;
+  width: 80px;
+  bottom: -70px;
+  left: auto;
+  margin-left: 0;
+  top: auto;
+  right: -40px;
+}
 .icon-afterparty {
   background-image: url("../images/party-icon.png");
   display: inline-block;
@@ -3495,4 +3504,102 @@ body {
   -ms-transform: rotate(30deg);
   transform: rotate(30deg);
   margin-top: -8px;
+}
+.intro {
+  background-image: -webkit-gradient(linear, 0% top, 100% top, from(#431583), to(#621672));
+  background-image: -webkit-linear-gradient(left, color-stop(#431583 0%), color-stop(#621672 100%));
+  background-image: -moz-linear-gradient(left, #431583 0%, #621672 100%);
+  background-image: linear-gradient(to right, #431583 0%, #621672 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff431583', endColorstr='#ff621672', GradientType=1);
+  padding-bottom: 65px;
+  position: relative;
+  z-index: 0;
+}
+.intro:before {
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  content: '';
+  display: block;
+  left: 0;
+  top: 0;
+  position: absolute;
+  background-image: url("../images/stars.png");
+}
+.intro__top {
+  border-bottom: 1px #04883c solid;
+  padding-bottom: 18px;
+  padding-top: 22px;
+  margin-bottom: 70px;
+}
+.intro__menu li a {
+  font-family: 'Roboto', sans-serif;
+  font-weight: lighter;
+  font-size: 16.9995px;
+  line-height: 1.25em;
+  border-bottom: 0;
+}
+.intro__menu li a,
+.intro__menu li a:hover {
+  color: #fff;
+}
+.intro__join-btn {
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  border-radius: 50px;
+  border: 2px #04883c solid;
+  text-align: center;
+  background: transparent;
+  width: 100%;
+  height: 60px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: lighter;
+  color: #fff;
+  display: block;
+  font-size: 22px;
+  padding-bottom: 6px;
+}
+.intro__join-btn-small {
+  display: block;
+  font-size: 12px;
+  line-height: 1.4em;
+}
+.intro__promo-title {
+  font-family: 'Roboto', sans-serif;
+  font-weight: lighter;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 45px;
+}
+.intro__text-icon {
+  padding-left: 55px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: lighter;
+  color: #fff;
+  font-size: 19.0005px;
+  line-height: 41px;
+  position: relative;
+}
+.intro__text-icon:before {
+  content: '';
+  display: block;
+  background-image: url("../images/event-icons.png");
+  width: 41px;
+  height: 41px;
+  left: 0;
+  top: 0;
+  position: absolute;
+}
+.fucking-cat {
+  display: block;
+  max-width: 100%;
+  margin: 0 auto 60px;
+}
+.main-title {
+  font-family: 'Roboto', sans-serif;
+  font-weight: lighter;
+  color: #fff;
+  font-size: 34px;
+  margin-bottom: 0;
 }
