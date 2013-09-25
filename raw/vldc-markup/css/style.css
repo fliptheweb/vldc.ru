@@ -3198,6 +3198,17 @@ body {
 .schedule-item__ava img {
   max-width: 100%;
 }
+.schedule-item__ava:after {
+  content: '';
+  display: block;
+  background-image: url("../images/speaker-bg.png");
+  width: 126px;
+  height: 145px;
+  position: absolute;
+  top: -22px;
+  left: 10px;
+  z-index: -1;
+}
 .schedule-item__firm {
   color: #999999;
   font-size: 16.9995px;

@@ -201,6 +201,17 @@ body {
 			img {
 				max-width: 100%;
 			}
+
+			&:after {
+				content: '';
+				display: block;
+				.bg('speaker-bg.png');
+				.size(126px, 145px);
+				position: absolute;
+				top: -22px;
+				left: 10px;
+				z-index: -1;
+			}
 		}
 
 		&__firm {
