@@ -3558,12 +3558,16 @@ body {
   color: #fff;
   display: block;
   font-size: 22px;
+  line-height: 54px;
   padding-bottom: 6px;
 }
 .intro__join-btn-small {
   display: block;
   font-size: 12px;
   line-height: 1.4em;
+}
+.intro__join-btn:hover {
+  color: #fff;
 }
 .intro__promo-title {
   font-family: 'Roboto', sans-serif;
