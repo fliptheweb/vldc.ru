@@ -1,5 +1,5 @@
 var pg = require('pg'),
-  conString = 'postgress://vldc:LgX0965VS4R857H@localhost/vldc',
+  conString =  process.env.DATABASE_URL || 'postgress://vldc:LgX0965VS4R857H@localhost/vldc',
   client = new pg.Client(conString),
   connection;
 
