@@ -82,7 +82,8 @@ app.post('/', function(req, res) {
         if (err) {
           res.json(err)
         } else {
-          res.cookie('registered', '1', {expires: new Date(Date.now() + 900000)});
+          var MAGICK_NUMBER = 1000000000;
+          res.cookie('registered', '1', {expires: new Date(Date.now() + MAGICK_NUMBER)});
           //todo send email
           res.render('index',
             {
