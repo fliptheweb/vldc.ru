@@ -1,3 +1,4 @@
+- var socials = [{href:"http://twitter.com/vldcru", class:"socials__icon"}, {href:"http://facebook.com/groups/424840274208231/", class:"socials__icon socials__icon_fb"}, {href:"http://vk.com/vldcru", class:"socials__icon socials__icon_vk"}, {href:"http://plus.google.com/u/0/communities/109714938062789336992", class:"socials__icon socials__icon_gp"}];
 div(class="footer")
     div(class="wrap")
         div(class="row")
@@ -8,12 +9,7 @@ div(class="footer")
                     a(href="mailto: hello@vldc.ru") hello@vldc.ru
 
                 div(class="socials row")
-                    div(class="col-sm-3 col-xs-3")
-                        a(href="#",class="socials__icon")
-                    div(class="col-sm-3 col-xs-3")
-                        a(href="#", class="socials__icon socials__icon_fb")
-                    div(class="col-sm-3 col-xs-3")
-                        a(href="#", class="socials__icon socials__icon_vk")
-                    div(class="col-sm-3 col-xs-3")
-                        a(href="#", class="socials__icon socials__icon_gp")
+                    - each social in socials
+                        div(class="col-sm-3 col-xs-3")
+                            a(href=social.href, class=social.class, target="_blank")
                 div(class="copy") &copy; 2013, VLDC
