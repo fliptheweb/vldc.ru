@@ -1,6 +1,7 @@
 extends layout
 block content
-    include member_form
+    if registered !== undefined && !registered
+        include member_form
     div(class="content")
     div(class="wrap")
         include schedule

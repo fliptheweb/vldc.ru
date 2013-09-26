@@ -19,12 +19,15 @@ app.use(express.static(__dirname + '/public'));
 
 //all path routed to root
 app.get('/', function(req, res) {
+  var registered = req.cookies.registered || 0;
   res.render('index', {
-    title: 'Главная'
+    title: 'Главная',
+    registered: registered
   });
 });
 
-app.post('/member/new', function(req, res) {
+app.post('/', function(req, res) {
+  var registered = req.cookies.registered || 0;
   console.log(req.headers);
   console.log(req.body);
   console.log(req.query);
@@ -40,7 +43,12 @@ app.post('/member/new', function(req, res) {
     res.render('index', {
       title: "Главная",
       flash: "Ты говно, ты не заполнил все поля",
-      error: true
+      error: true,
+      name: name,
+      surname: surname,
+      email: email,
+      workplace: workplace,
+      registered: registered
     });
   }
 
@@ -60,7 +68,12 @@ app.post('/member/new', function(req, res) {
         {
           title: "Главная",
           flash: "Ты говно, ты уже зареган",
-          error: true
+          error: true,
+          name: name,
+          surname: surname,
+          email: email,
+          workplace: workplace,
+          registered: registered
         });
     } else {
       query = 'insert into event_member (event_id, name, date, email, workplace)' +
@@ -69,12 +82,14 @@ app.post('/member/new', function(req, res) {
         if (err) {
           res.json(err)
         } else {
+          res.cookie('registered', '1', {expires: new Date(Date.now() + 900000)});
           //todo send email
           res.render('index',
             {
               title: "Главная",
               flash: "Все ок, иди в жопу",
-              error: false
+              error: false,
+              registered: 1
             });
         }
       });

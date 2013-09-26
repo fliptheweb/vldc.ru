@@ -11,13 +11,13 @@ html(lang='ru')
         //if lte IE 8
             link(rel="stylesheet", href="css/ie8.css")
     body
-        if flash
-            if error
-                flashClass = "flash red"
-            else
-                flashClass = "flash green"
-            div(class=flashClass) #{flash}
         div(class="body")
+            if flash
+                if error
+                    flashClass = "flash red"
+                else
+                    flashClass = "flash green"
+                div(class=flashClass) #{flash}
             block content
             include footer
         script(src="http://yandex.st/jquery/1.9.1/jquery.min.js")
