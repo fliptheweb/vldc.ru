@@ -29,19 +29,21 @@ app.post('/member/new', function(req, res) {
   console.log(req.body);
   console.log(req.query);
   var request = req.body,
-    surname = request.surname || null,
-    name = request.name || null,
-    email = request.email || null,
-    workplace = request.workplace || null;
+    surname = request.surname || "",
+    name = request.name || "",
+    email = request.email || "",
+    workplace = request.workplace || "",
+    emailRex = /^[-a-z0-9!#$%&'*+/=?^_`{|}~]+(?:\.[-a-z0-9!#$%&'*+/=?^_`{|}~]+)*@(?:[a-z0-9]([-a-z0-9]{0,61}[a-z0-9])?\.)*(?:aero|arpa|asia|biz|cat|com|coop|edu|gov|info|int|jobs|mil|mobi|museum|name|net|org|pro|tel|travel|[a-z][a-z])$/,
+    emailOk = email.match(emailRex);
 
-  if (!surname || !name || !email || !workplace) {
+    if (!surname || !name || !email || !workplace || !emailOk) {
     res.render('index', {
       title: "Главная",
       flash: "Ты говно, ты не заполнил все поля",
       error: true
     });
   }
-  //todo validate email
+
 
   name = surname + ' ' + name;
   var query = 'select count(id) cnt from event_member where ' +
