@@ -42,7 +42,7 @@ app.post('/', function(req, res) {
     if (!surname || !name || !email || !workplace || !emailOk) {
     res.render('index', {
       title: "VLDC — Владивостокская конференция разработчиков",
-      flash: "Ты говно, ты не заполнил все поля",
+      flash: "Заполните, пожалуйста, все поля",
       error: true,
       name: name,
       surname: surname,
