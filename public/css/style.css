@@ -3598,7 +3598,7 @@ body {
 .intro__text-icon_loc:before {
   background-position: -41px 0;
 }
-.fucking-cat {
+.nyancat {
   display: block;
   max-width: 100%;
   margin: 0 auto 60px;
@@ -3609,4 +3609,15 @@ body {
   color: #fff;
   font-size: 34px;
   margin-bottom: 0;
+}
+.flash {
+  padding: 20px;
+  font-size: 20px;
+  color: #000;
+}
+.red {
+  background: #ff6161;
+}
+.green {
+  background: #91ff61;
 }
