@@ -3,7 +3,8 @@ var
   express = require('express'),
   app = express(),
   DEFAULT_PORT = 3000,
-  PORT = process.env.PORT || process.argv[2] || DEFAULT_PORT;
+  PORT = process.env.PORT || process.argv[2] || DEFAULT_PORT,
+	title = "VLDC — Владивостокская конференция разработчиков";
 
 app.set('view engine', 'jade');
 app.set('view options', {layout: false});   //dont use layout in `render` method
@@ -21,7 +22,7 @@ app.use(express.static(__dirname + '/public'));
 app.get('/', function(req, res) {
   var registered = req.cookies.registered || 0;
   res.render('index', {
-    title: 'Главная',
+    title: title,
     registered: registered
   });
 });
@@ -41,7 +42,7 @@ app.post('/', function(req, res) {
 
     if (!surname || !name || !email || !workplace || !emailOk) {
     res.render('index', {
-      title: "VLDC — Владивостокская конференция разработчиков",
+      title: title,
       flash: "Заполните, пожалуйста, все поля",
       error: true,
       name: name,
@@ -66,8 +67,8 @@ app.post('/', function(req, res) {
     if (isExist) {
       res.render('index',
         {
-          title: "Главная",
-          flash: "Ты говно, ты уже зареган",
+          title: title,
+          flash: "Извините, но вы уже зарегистрированы",
           error: true,
           name: name,
           surname: surname,
@@ -87,8 +88,8 @@ app.post('/', function(req, res) {
           //todo send email
           res.render('index',
             {
-              title: "Главная",
-              flash: "Все ок, иди в жопу",
+              title: title,
+              flash: "Все отлично, ждем вас на конференции!",
               error: false,
               registered: 1
             });
