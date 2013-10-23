@@ -4,7 +4,7 @@ var
   app = express(),
   DEFAULT_PORT = 3000,
   PORT = process.env.PORT || process.argv[2] || DEFAULT_PORT,
-	title = "VLDC — Владивостокская конференция разработчиков";
+  title = "VLDC — Владивостокская конференция разработчиков";
 
 app.set('view engine', 'jade');
 app.set('view options', {layout: false});   //dont use layout in `render` method
@@ -52,7 +52,6 @@ app.post('/', function(req, res) {
       registered: registered
     });
   }
-
 
   name = surname + ' ' + name;
   var query = 'select count(id) cnt from event_member where ' +
