@@ -1,13 +1,30 @@
-/**
- * Created by JetBrains PhpStorm.
- * User: Lukin Anton
- * Date: 23.09.13
- * Time: 11:09
- */
+$(function () {
+	// form close
+	var $header = $('.header'),
+		$intro = $('.intro');
 
-$(function() {
-	$('.js-header-close').on('click', function(e) {
+	$('.js-header-close').on('click', function (e) {
 		e.preventDefault();
-		$(this).closest('.header').slideUp();
+
+		$header.slideUp(function () {
+			$intro.slideDown();
+		});
+	});
+
+	// open form
+	$('.js-participate').on('click', function (e) {
+		e.preventDefault();
+
+		$intro.slideUp(function () {
+			$header.slideDown();
+		});
+	});
+
+	// smooth scroll
+	$('.js-smooth-scroll').find('a').on('click', function (e) {
+		e.preventDefault();
+
+		var destination = $($(this).attr("href")).offset().top;
+		$('html, body').animate({ scrollTop: destination }, 1100);
 	});
 });
