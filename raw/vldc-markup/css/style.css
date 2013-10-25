@@ -3582,7 +3582,8 @@ body {
   font-weight: lighter;
   color: #fff;
   font-size: 19.0005px;
-  line-height: 41px;
+  line-height: 24px;
+  padding-top: 7px;
   position: relative;
 }
 .intro__text-icon:before {
