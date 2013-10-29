@@ -3423,6 +3423,15 @@ body {
 .sponsors__item {
   margin-bottom: 20px;
 }
+.sponsors__item-link {
+  display: block;
+  height: 140px;
+  text-align: center;
+}
+.sponsors__item-link img {
+  display: block;
+  margin: 0 auto;
+}
 .footer {
   padding-top: 140px;
   background-image: url("../images/stars-footer.png");
