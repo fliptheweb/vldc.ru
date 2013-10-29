@@ -3431,6 +3431,7 @@ body {
 .sponsors__item-link img {
   display: block;
   margin: 0 auto;
+  max-width: 100%;
 }
 .footer {
   padding-top: 140px;
