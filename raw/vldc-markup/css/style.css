@@ -3607,6 +3607,10 @@ body {
 .intro__text-icon_loc:before {
   background-position: -41px 0;
 }
+.intro__text-icon a {
+  color: #fff;
+  text-decoration: underline;
+}
 .nyancat {
   display: block;
   max-width: 100%;
