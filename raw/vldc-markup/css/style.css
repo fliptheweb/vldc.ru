@@ -3395,7 +3395,7 @@ body {
 }
 .main-partner__logo {
   display: inline-block;
-  vertical-align: middle;
+  vertical-align: top;
   width: 30%;
   text-align: center;
 }
@@ -3410,12 +3410,10 @@ body {
   font-weight: lighter;
   color: #737373;
 }
-.main-partner__vac-desc {
+.main-partner__vac-desc h3 {
+  margin-top: 20px;
   font-family: 'Roboto', sans-serif;
   font-weight: lighter;
-  font-size: 16.9995px;
-  line-height: 1.25em;
-  color: #0052c2;
 }
 .other-partner {
   margin-bottom: 60px;
