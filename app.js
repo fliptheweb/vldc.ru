@@ -81,7 +81,7 @@ app.post('/', function(req, res) {
           registered: registered
         });
     } else {
-     query = 'insert into event_member (event_id, name, date, email, workplace)' +
+      query = 'insert into event_member (event_id, name, date, email, workplace)' +
         'values (1, \''+name+'\', now(), \''+email+'\', \''+workplace+'\')';
       db.client.query(query, function(err, result) {
         if (err) {
