@@ -38,7 +38,8 @@ app.post('/', function(req, res) {
     email = request.email || "",
     workplace = request.workplace || "",
     emailRex = /^[-a-z0-9!#$%&'*+/=?^_`{|}~]+(?:\.[-a-z0-9!#$%&'*+/=?^_`{|}~]+)*@(?:[a-z0-9]([-a-z0-9]{0,61}[a-z0-9])?\.)*(?:aero|arpa|asia|biz|cat|com|coop|edu|gov|info|int|jobs|mil|mobi|museum|name|net|org|pro|tel|travel|[a-z][a-z])$/,
-    emailOk = email.match(emailRex);
+    emailOk = email.match(emailRex),
+    sanitizer = require('sanitizer');
 
     if (!surname || !name || !email || !workplace || !emailOk) {
     res.render('index', {
@@ -54,6 +55,8 @@ app.post('/', function(req, res) {
   }
 
   name = surname + ' ' + name;
+  name = sanitizer.escape('name');
+
   var query = 'select count(id) cnt from event_member where ' +
     'event_id=1 and name = \'' + name + '\'';
 
@@ -76,9 +79,11 @@ app.post('/', function(req, res) {
           registered: registered
         });
     } else {
+      email = sanitizer.escape(sanitizer.sanitize(email));
+      workplace = sanitizer.escape(sanitizer.sanitize(workplace));
       query = 'insert into event_member (event_id, name, date, email, workplace)' +
         'values (1, \''+name+'\', now(), \''+email+'\', \''+workplace+'\')';
-      db.client.query(query, function(err, result){
+      db.client.query(query, function(err, result) {
         if (err) {
           res.json(err)
         } else {

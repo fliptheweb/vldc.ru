@@ -6,7 +6,8 @@
     "express": "3.x",
     "jade": "0.31.x",
     "nconf": "0.6.7",
-    "pg": "0.6.15"
+    "pg": "0.6.15",
+    "sanitizer": "0.1.1"
   },
   "engines": {
     "node": "0.10.x",
