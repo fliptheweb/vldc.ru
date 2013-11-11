@@ -55,7 +55,7 @@ app.post('/', function(req, res) {
   }
 
   name = surname + ' ' + name;
-  name = sanitizer.escape('name');
+  name = sanitizer.escape(sanitizer.sanitize(name));
 
   var query = 'select count(id) cnt from event_member where ' +
     'event_id=1 and name = \'' + name + '\'';
