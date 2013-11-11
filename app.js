@@ -56,7 +56,9 @@ app.post('/', function(req, res) {
 
   name = surname + ' ' + name;
   name = sanitizer.escape(sanitizer.sanitize(name));
-
+  email = sanitizer.escape(sanitizer.sanitize(email));
+  workplace = sanitizer.escape(sanitizer.sanitize(workplace));
+ 
   var query = 'select count(id) cnt from event_member where ' +
     'event_id=1 and name = \'' + name + '\'';
 
@@ -79,9 +81,7 @@ app.post('/', function(req, res) {
           registered: registered
         });
     } else {
-      email = sanitizer.escape(sanitizer.sanitize(email));
-      workplace = sanitizer.escape(sanitizer.sanitize(workplace));
-      query = 'insert into event_member (event_id, name, date, email, workplace)' +
+     query = 'insert into event_member (event_id, name, date, email, workplace)' +
         'values (1, \''+name+'\', now(), \''+email+'\', \''+workplace+'\')';
       db.client.query(query, function(err, result) {
         if (err) {
