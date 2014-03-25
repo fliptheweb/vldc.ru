@@ -2,8 +2,8 @@ var
   db = require('./db'),
   express = require('express'),
   app = express(),
-  DEFAULT_PORT = 3000,
-  PORT = process.env.PORT || process.argv[2] || DEFAULT_PORT,
+  DEFAULT_PORT = 12000,
+  PORT = DEFAULT_PORT,
   title = "VLDC — Владивостокская конференция разработчиков";
 
 app.set('view engine', 'jade');

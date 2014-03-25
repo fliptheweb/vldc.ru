@@ -1,1 +1,1 @@
-gem 'capistrano', '~> 3.1.0'
+gem 'capistrano', '~> 2.15.5'
