@@ -1,5 +1,5 @@
 var
-  db = require('./db'),
+//  db = require('./db'),
   express = require('express'),
   app = express(),
   DEFAULT_PORT = 12000,
@@ -104,8 +104,8 @@ app.post('/', function(req, res) {
   });
 });
 
-db.connectDatabase(function() {
-  app.listen(PORT, function() {
-    console.log('Running on http://127.0.0.1:' + PORT + '/');
-  });
-});
+//db.connectDatabase(function() {
+//  app.listen(PORT, function() {
+//    console.log('Running on http://127.0.0.1:' + PORT + '/');
+//  });
+//});
